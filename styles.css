@@ -1,0 +1,227 @@
+body {
+  background-color: hsl(226, 43%, 10%);
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  font-family: Rubik;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  gap: 1.5rem;
+}
+.report {
+  background-color: hsl(235, 46%, 20%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  width: 100%;
+  grid-area: report;
+}
+.report .profile {
+  gap: 20px;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  background-color: hsl(246, 80%, 60%);
+  align-items: center;
+}
+.report h3 {
+  margin: 0px;
+  font-weight: 400;
+  color: hsl(235, 45%, 61%);
+}
+.report h2 {
+  margin: 0px;
+  color: white;
+  font-weight: 300;
+}
+.report .profile div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.report .navigation {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-between;
+  font-size: 16px;
+}
+#daily:hover,
+#weekly:hover,
+#monthly:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.stats {
+  display: flex;
+  width: 100%;
+  height: 175px;
+  position: relative;
+  border-radius: 1.5rem;
+}
+.stats .stat {
+  grid-area: stat;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+.stats .hours {
+  grid-area: hours;
+  margin: 0px;
+  color: white;
+  font-size: 32px;
+  font-weight: 200;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+.stats .ellipsis {
+  grid-area: ellipsis;
+  justify-self: end;
+  cursor: pointer;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+.stats .ellipsis:hover {
+  filter: brightness(10);
+}
+.stats .last-week {
+  grid-area: last-week;
+  justify-self: end;
+  align-self: center;
+  margin: 0px;
+  font-weight: 400;
+  color: hsl(235, 45%, 61%);
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.stats .content {
+  background-color: hsl(235, 46%, 20%);
+  display: grid;
+  width: 100%;
+  height: 70px;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "stat ellipsis"
+    "hours last-week";
+  align-self: end;
+}
+.stats .content:hover {
+  background-color: rgb(52, 57, 123);
+}
+#work {
+  background-image: url(images/icon-work.svg);
+  background-position: calc(100% - 10px) calc(0% - 10px); /* Adjust the values as needed */
+  background-repeat: no-repeat;
+  background-color: hsl(15, 100%, 70%);
+  grid-area: work;
+}
+#play {
+  background-image: url(images/icon-play.svg);
+  background-position: calc(100% - 10px) calc(0% - 5px); /* Adjust the values as needed */
+  background-repeat: no-repeat;
+  background-color: hsl(195, 74%, 62%);
+  grid-area: play;
+}
+#study {
+  background-image: url(images/icon-study.svg);
+  background-position: calc(100% - 10px) calc(0% - 10px); /* Adjust the values as needed */
+  background-repeat: no-repeat;
+  background-color: hsl(348, 100%, 68%);
+  grid-area: study;
+}
+#exercise {
+  background-image: url(images/icon-exercise.svg);
+  background-position: calc(100% - 10px) 0px; /* Adjust the values as needed */
+  background-repeat: no-repeat;
+  background-color: hsl(145, 58%, 55%);
+  grid-area: exercise;
+}
+#social {
+  background-image: url(images/icon-social.svg);
+  background-position: calc(100% - 10px) calc(0% - 15px); /* Adjust the values as needed */
+  background-repeat: no-repeat;
+  background-color: hsl(264, 64%, 52%);
+  grid-area: social;
+}
+#self-care {
+  background-image: url(images/icon-self-care.svg);
+  background-position: calc(100% - 10px) calc(0% - 10px); /* Adjust the values as needed */
+  background-repeat: no-repeat;
+  background-color: hsl(43, 84%, 65%);
+  grid-area: self-care;
+}
+
+@media only screen and (min-width: 1010px) {
+  .container {
+    height: 470px;
+    width: 1010px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "report work play study"
+      "report exercise social self-care";
+    padding: 0px;
+  }
+
+  .report {
+    height: 100%;
+    width: 100%;
+  }
+  .report .profile {
+    flex-direction: column;
+    align-items: start;
+  }
+  .report .navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .report h2 {
+    font-size: 38px;
+  }
+  .stats {
+    display: flex;
+    width: 100%;
+    height: 220px;
+    position: relative;
+    border-radius: 1.5rem;
+  }
+  .stats .content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "stat stat . ellipsis"
+      "hours . . ."
+      "last-week last-week last-week .";
+    height: 120px;
+    padding: 1.5rem;
+    
+  }
+  .stats .hours {
+    margin-top: 1rem;
+    font-size: 48px;
+  }
+  .stats .last-week {
+    justify-self: start;
+    margin-top: 0.5rem;
+    font-size: 13px;
+  }
+}
