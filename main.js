@@ -4,8 +4,16 @@ const study = document.getElementById("study");
 const exercise = document.getElementById("exercise");
 const social = document.getElementById("social");
 const selfcare = document.getElementById("self-care");
-
-document.getElementById("daily").addEventListener("click", () => {
+const daily = document.getElementById("daily");
+const weekly= document.getElementById("weekly")
+const monthly= document.getElementById("monthly")
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('weekly').click();
+});
+daily.addEventListener("click", () => {
+  daily.style.color = "white";
+  weekly.style.color = "";
+  monthly.style.color = "";
   fetch("./data.json")
     .then((res) => res.json())
     .then((data) => {
@@ -49,7 +57,10 @@ document.getElementById("daily").addEventListener("click", () => {
       });
     });
 });
-document.getElementById("weekly").addEventListener("click", () => {
+weekly.addEventListener("click", () => {
+  daily.style.color = "";
+  weekly.style.color = "white";
+  monthly.style.color = "";
   fetch("./data.json")
     .then((res) => res.json())
     .then((data) => {
@@ -93,7 +104,10 @@ document.getElementById("weekly").addEventListener("click", () => {
       });
     });
 });
-document.getElementById("monthly").addEventListener("click", () => {
+monthly.addEventListener("click", () => {
+  daily.style.color = "";
+  weekly.style.color = "";
+  monthly.style.color = "white";
   fetch("./data.json")
     .then((res) => res.json())
     .then((data) => {
